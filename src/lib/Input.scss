@@ -1,0 +1,44 @@
+$primary-blue-500: #00f;
+$secondary-grey-500: #5a5d70;
+$default-black: #222;
+
+$aotw-space-xs: 4px;
+$aotw-space-s: 8px;
+
+@mixin typography-default {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2em;
+}
+@mixin typography-input {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2em;
+  text-decoration: none;
+}
+
+:host {
+  display: inline-grid;
+  gap: $aotw-space-xs;
+}
+
+label {
+  @include typography-default;
+  color: $primary-blue-500;
+}
+
+input {
+  box-sizing: border-box;
+  height: 32px;
+  padding-inline: $aotw-space-s;
+  border: 1px solid $secondary-grey-500;
+  @include typography-input;
+  color: $default-black;
+  
+  &:focus {
+    border-color: $primary-blue-500;
+    outline: 2px solid $primary-blue-500;
+  }
+}
